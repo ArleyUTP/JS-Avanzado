@@ -1,0 +1,19 @@
+<p>pelicula-components works!</p>
+
+<form [formGroup]="peliculaForm" (ngSubmit)="agregarPelicula()">
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" formControlName="nombre" required>
+
+    <label for="director">Director:</label>
+    <input id="director" formControlName="director" required>
+
+    <label for="clasificacion">Clasificacion:</label>
+    <input id="clasificacion" formControlName="clasificacion" required>
+    <button type="submit" [disabled]="!peliculaForm.valid">Agregar Pelicula</button>
+</form>
+<ul>
+    <h1>Las peliculas son</h1>
+    @for (pelicula of peliculas; track pelicula) {
+    <li>{{pelicula.id}} - {{pelicula.nombre}} - {{pelicula.director}} - {{pelicula.clasificacion}}</li>
+    }
+</ul>

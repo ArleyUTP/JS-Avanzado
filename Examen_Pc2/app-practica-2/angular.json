@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "consumer-api-angular": {
+    "app-practica-2": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -26,12 +26,7 @@
             ],
             "styles": [
               "src/styles.css"
-            ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {
@@ -61,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "consumer-api-angular:build:production"
+              "buildTarget": "app-practica-2:build:production"
             },
             "development": {
-              "buildTarget": "consumer-api-angular:build:development"
+              "buildTarget": "app-practica-2:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,6 +90,6 @@
     }
   },
   "cli": {
-    "analytics": "dc38933c-fe7c-4ba3-8d76-3e78115bf822"
+    "analytics": "e789c885-fc69-4d89-9051-087b19635b92"
   }
 }
