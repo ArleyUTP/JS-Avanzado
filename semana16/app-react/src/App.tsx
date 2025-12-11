@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
-interface CordenasCursor {
+interface CordenadasCursor {
   x: number
   y: number
 }
@@ -9,15 +9,13 @@ interface CordenasCursor {
 
 
 function App() {
-  const [cordenas, setCordenas] = useState<CordenasCursor>({ x: 0, y: 0 })
-  const [trail, setTrail] = useState<CordenasCursor[]>([])
+  const [cordenas, setCordenas] = useState<CordenadasCursor>({ x: 0, y: 0 })
 
   const handleMouseMove = (event: MouseEvent) => {
     const mouseX = event.clientX
     const mouseY = event.clientY
 
     setCordenas({ x: mouseX, y: mouseY })
-    setTrail((prevTrail) => [...prevTrail, { x: mouseX, y: mouseY }].slice(-80))
   }
   useEffect(() => {
 
@@ -30,26 +28,14 @@ function App() {
   return (
     <>
       <div>
-        <h1>Coordenadas del cursor</h1>
-        <div className="area-trabajo">
+        <h1>Coordenadas del ratón</h1>
+        <div className="">
           <p>
-            Coordenadas X: {cordenas.x} - Y: {cordenas.y}
+            Coordenadas X:<strong>{cordenas.x}</strong>
           </p>
-          {trail.map((point, index) => (
-            <div
-              key={index}
-              style={{
-                position: 'absolute',
-                left: point.x,
-                top: point.y,
-                width: '5px',
-                height: '5px',
-                backgroundColor: 'red',
-                borderRadius: '50%',
-                pointerEvents: 'none',
-              }}
-            ></div>
-          ))}
+          <p>
+            Coordenadas Y: <strong>{cordenas.y}</strong>
+          </p>
         </div>
       </div>
     </>
